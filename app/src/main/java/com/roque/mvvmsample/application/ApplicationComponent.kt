@@ -10,7 +10,7 @@ interface ApplicationComponent {
 
     fun inject(app: MVVMSampleApplication)
 
-    fun createActivityGithubUsers(module: ActivityModule): GithubUsersActivity
+    //fun createActivityGithubUsers(module: ActivityModule): GithubUsersActivity
 
     @Component.Builder
     interface Builder {
