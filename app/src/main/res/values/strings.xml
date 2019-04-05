@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVVMSample</string>
+    <string name="empty_state">No users found!</string>
 </resources>

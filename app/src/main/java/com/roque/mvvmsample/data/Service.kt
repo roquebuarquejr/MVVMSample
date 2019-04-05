@@ -6,5 +6,5 @@ import retrofit2.http.GET
 interface Service {
 
     @GET("users")
-    abstract fun getGithubUsers(): Single<List<GithubUser>>
+    fun getGithubUsers(): Single<List<GithubUser>>
 }

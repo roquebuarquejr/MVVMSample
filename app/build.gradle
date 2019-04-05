@@ -13,6 +13,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", '"https://api.github.com/"'
+
     }
     buildTypes {
         release {
@@ -25,6 +28,9 @@ android {
 final archComponentsVersion = '1.1.1'
 final retrofitVersion = '2.3.0'
 final okHttpVersion = '3.9.1'
+final supportVersion = '28.0.0'
+final glideVersion = '4.9.0'
+
 
 dependencies {
 
@@ -37,6 +43,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
+    implementation "com.android.support:recyclerview-v7:$supportVersion"
+
 
     //LIFECYCLE
     implementation "android.arch.lifecycle:extensions:$archComponentsVersion"
@@ -55,4 +63,8 @@ dependencies {
     //DAGER
     implementation 'com.google.dagger:dagger:2.17'
     kapt 'com.google.dagger:dagger-compiler:2.17'
+
+    //GLIDE
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
 }
