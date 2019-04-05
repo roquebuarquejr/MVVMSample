@@ -1,4 +1,4 @@
-package com.roque.mvvmsample.data
+package com.roque.api
 
 import com.google.gson.annotations.SerializedName
 

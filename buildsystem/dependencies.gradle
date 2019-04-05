@@ -1,0 +1,32 @@
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+ext {
+    //Libraries versions
+    final archComponentsVersion = '1.1.1'
+    final retrofitVersion = '2.3.0'
+    final mockitoVersion = '2.13.0'
+
+    commonDependencies = [
+
+            //RXJava
+            rxJava  : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+
+            //DAGGER
+            dagger           : 'com.google.dagger:dagger:2.17',
+            daggerCompile    : 'com.google.dagger:dagger-compiler:2.17'
+    ]
+
+    commonTestDependencies = [
+            jUnit   : 'junit:junit:4.12',
+            runner  : 'androidx.test:runner:1.1.2-alpha02',
+            espresso: 'androidx.test.espresso:espresso-core:3.2.0-alpha02',
+            mockito : "org.mockito:mockito-core:$mockitoVersion",
+            archCore: "android.arch.core:core-testing:$archComponentsVersion"
+    ]
+}

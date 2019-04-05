@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
+import com.roque.api.GithubUser
 import com.roque.mvvmsample.R
-import com.roque.mvvmsample.data.GithubUser
 import kotlinx.android.synthetic.main.item_user.view.*
 
 class UserAdapter(private val user: List<GithubUser>) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {

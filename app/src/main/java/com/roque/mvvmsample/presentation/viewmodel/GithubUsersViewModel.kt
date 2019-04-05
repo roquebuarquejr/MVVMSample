@@ -4,9 +4,9 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.roque.mvvmsample.data.GithubUser
-import com.roque.mvvmsample.data.RetrofitConfig.Companion.createApi
-import com.roque.mvvmsample.data.Service
+import com.roque.api.GithubUser
+import com.roque.api.RetrofitConfig.Companion.createApi
+import com.roque.api.Service
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 

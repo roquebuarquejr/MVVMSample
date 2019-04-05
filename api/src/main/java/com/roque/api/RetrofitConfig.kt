@@ -1,4 +1,4 @@
-package com.roque.mvvmsample.data
+package com.roque.api
 
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
