@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.roque.mvvmsample.BuildConfig
 import com.roque.mvvmsample.R
+import com.roque.mvvmsample.application.MVVMSampleApplication
 import com.roque.mvvmsample.presentation.viewmodel.GithubUsersViewModel
 import com.roque.mvvmsample.presentation.adapter.UserAdapter
 import kotlinx.android.synthetic.main.activity_githubusers.*
