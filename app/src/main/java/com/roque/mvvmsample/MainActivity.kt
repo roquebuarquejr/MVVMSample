@@ -2,6 +2,7 @@ package com.roque.mvvmsample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -16,10 +17,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        iniRecyclerView()
         initViewModel()
     }
 
+    private fun iniRecyclerView() {
+        rcUsersMain.layoutManager = LinearLayoutManager(this)
+    }
+
     private fun initViewModel() {
+        /**
+         * Create new ViewModel instance
+         */
         val viewModel: GithubUsersViewModel by lazy {
             ViewModelProviders.of(
                 this,
@@ -27,9 +36,13 @@ class MainActivity : AppCompatActivity() {
             ).get(GithubUsersViewModel::class.java)
         }
 
+        /**
+         * Starting observing userList liveData
+         */
         viewModel.users.observe(this, Observer {
-            rcUsersMain.layoutManager = LinearLayoutManager(this)
-
+            /**
+             * Checking if list empty or not
+             */
             if (it?.isEmpty() == false) {
                 rcUsersMain.adapter = UserAdapter(it)
             } else {
@@ -37,11 +50,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        /**
+         * Starting observing error liveData
+         */
         viewModel.error.observe(this, Observer {
             Toast.makeText(this, "#erro", Toast.LENGTH_SHORT).show()
         })
-
-        viewModel.fetchUsers()
-
     }
+
 }
