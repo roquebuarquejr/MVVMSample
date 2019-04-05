@@ -1,4 +1,4 @@
-package com.roque.mvvmsample.presentation
+package com.roque.mvvmsample.presentation.viewmodel
 
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
@@ -41,7 +41,9 @@ class GithubUsersViewModel(private val service: Service) : ViewModel() {
     }
 
     class GithubUsersViewModelFactory(private val baseUrl: String): ViewModelProvider.NewInstanceFactory() {
-        override fun <T : ViewModel>create(modelClass: Class<T>) = GithubUsersViewModel(createApi(baseUrl)) as T
+        override fun <T : ViewModel>create(modelClass: Class<T>) = GithubUsersViewModel(
+            createApi(baseUrl)
+        ) as T
     }
 }
 

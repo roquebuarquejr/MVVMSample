@@ -1,21 +1,22 @@
-package com.roque.mvvmsample
+package com.roque.mvvmsample.presentation.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.roque.mvvmsample.presentation.GithubUsersViewModel
+import com.roque.mvvmsample.BuildConfig
+import com.roque.mvvmsample.R
+import com.roque.mvvmsample.presentation.viewmodel.GithubUsersViewModel
 import com.roque.mvvmsample.presentation.adapter.UserAdapter
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_githubusers.*
 
-class MainActivity : AppCompatActivity() {
+class GithubUsersActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_githubusers)
 
         iniRecyclerView()
         initViewModel()

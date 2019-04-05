@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.roque.mvvmsample.data.GithubUser
 import com.roque.mvvmsample.data.Service
-import com.roque.mvvmsample.presentation.GithubUsersViewModel
+import com.roque.mvvmsample.presentation.viewmodel.GithubUsersViewModel
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Rule
