@@ -22,6 +22,7 @@ android {
     }
 }
 
+final archComponentsVersion = '1.1.1'
 final retrofitVersion = '2.3.0'
 final okHttpVersion = '3.9.1'
 
@@ -36,6 +37,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0-alpha02'
+
+    //LIFECYCLE
+    implementation "android.arch.lifecycle:extensions:$archComponentsVersion"
 
 
     //RETROFIT
