@@ -9,7 +9,7 @@ It's also have a very nice approach about unit and instumented test applyed.
 * RxJava2
 * GSON
 * Glide
-* Dagger
+* Dagger2
 * Arch Lifecycle
 
 
