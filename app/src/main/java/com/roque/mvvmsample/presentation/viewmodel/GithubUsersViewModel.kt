@@ -7,10 +7,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.roque.api.GithubUser
 import com.roque.api.RetrofitConfig.Companion.createApi
 import com.roque.api.Service
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class GithubUsersViewModel(private val service: Service) : ViewModel() {
+class GithubUsersViewModel @Inject constructor(private val service: Service) : ViewModel() {
 
     @NonNull
     private val compositeDisposable = CompositeDisposable()
@@ -22,9 +25,11 @@ class GithubUsersViewModel(private val service: Service) : ViewModel() {
         compositeDisposable.add(fetchUsers())
     }
 
-    fun  fetchUsers() : Disposable {
+    fun fetchUsers(): Disposable {
         return service.getGithubUsers()
-                .subscribe(::updateUsers, ::displayError)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(::updateUsers, ::displayError)
     }
 
     override fun onCleared() {
@@ -32,18 +37,12 @@ class GithubUsersViewModel(private val service: Service) : ViewModel() {
         compositeDisposable.dispose()
     }
 
-    private fun updateUsers(list: List<GithubUser>){
+    private fun updateUsers(list: List<GithubUser>) {
         users.postValue(list)
     }
 
-    private fun displayError(t:Throwable){
+    private fun displayError(t: Throwable) {
         error.postValue(t)
-    }
-
-    class GithubUsersViewModelFactory(private val baseUrl: String): ViewModelProvider.NewInstanceFactory() {
-        override fun <T : ViewModel>create(modelClass: Class<T>) = GithubUsersViewModel(
-            createApi(baseUrl)
-        ) as T
     }
 }
 

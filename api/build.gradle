@@ -13,6 +13,9 @@ android {
         versionName androidVersions.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+        buildConfigField "String", "BASE_URL", '"https://api.github.com/"'
+
+
     }
     buildTypes {
         release {
@@ -43,10 +46,11 @@ dependencies {
      **/
     //RETROFIT
     implementation commonDependencies.rxJava
+    implementation commonDependencies.rxRetrofit
 
     //DAGGER
     implementation commonDependencies.dagger
-    kapt commonDependencies.daggerCompile
+    kapt  commonDependencies.daggerCompile
 
     testImplementation commonTestDependencies.jUnit
     testImplementation commonTestDependencies.runner

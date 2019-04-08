@@ -1,11 +1,14 @@
 package com.roque.mvvmsample.application
 
+
 import com.roque.mvvmsample.presentation.activities.GithubUsersComponent
 import com.roque.mvvmsample.presentation.injection.ActivityModule
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Singleton
 
-@Component(modules = [ApplicationModule::class])
+@Singleton
+@Component(modules = [ApplicationModule::class, ServiceModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
     fun inject(app: MVVMSampleApplication)

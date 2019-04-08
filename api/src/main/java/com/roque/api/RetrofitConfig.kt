@@ -19,8 +19,6 @@ class RetrofitConfig {
                 .addInterceptor(logging)
                 .build()
 
-
-
             return Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .client(client)

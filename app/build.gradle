@@ -9,7 +9,6 @@ apply plugin: 'kotlin-kapt' // <- Add this line
 android {
 
     def androidVersions = rootProject.ext.android
-
     compileSdkVersion androidVersions.compileSdkVersion
     defaultConfig {
         minSdkVersion androidVersions.minSdkVersion
@@ -33,6 +32,8 @@ android {
 final archComponentsVersion = '1.1.1'
 final supportVersion = '28.0.0'
 final glideVersion = '4.9.0'
+final okHttpVersion = '3.9.1'
+final retrofitVersion = '2.3.0'
 
 dependencies {
 
@@ -47,6 +48,14 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation "com.android.support:recyclerview-v7:$supportVersion"
 
+    //RETROFIT
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    //OKHTTP
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+
     //LIFECYCLE
     implementation "android.arch.lifecycle:extensions:$archComponentsVersion"
 
@@ -57,11 +66,12 @@ dependencies {
      Commons Dependencies
      **/
     //RXJAVA
+    implementation commonDependencies.rxRetrofit
     implementation commonDependencies.rxJava
 
     //DAGGER
     implementation commonDependencies.dagger
-    kapt commonDependencies.daggerCompile
+    kapt  commonDependencies.daggerCompile
 
     testImplementation commonTestDependencies.jUnit
     testImplementation commonTestDependencies.runner
