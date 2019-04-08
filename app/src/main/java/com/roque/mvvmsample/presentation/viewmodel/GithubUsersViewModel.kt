@@ -3,9 +3,7 @@ package com.roque.mvvmsample.presentation.viewmodel
 import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.roque.api.GithubUser
-import com.roque.api.RetrofitConfig.Companion.createApi
 import com.roque.api.Service
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

@@ -14,6 +14,10 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
+import io.reactivex.schedulers.Schedulers
+import io.reactivex.android.plugins.RxAndroidPlugins
+
+
 
 
 @RunWith(MockitoJUnitRunner::class)
@@ -35,13 +39,19 @@ class GithubUsersViewModelTest {
 
     @Before
     fun setup(){
+        //TO AVOID ExceptionInInitializerError
+        RxAndroidPlugins.setInitMainThreadSchedulerHandler {Schedulers.trampoline() }
+
+        //PROVIDE SINGLE RETURN TO SERVICE
         arrangeBuilder = ArrangeBuilder()
+
+        //INIT VIEW MODEL
         viewModel = GithubUsersViewModel(service)
 
+        //SETTING LIVEDATA MOCK
         viewModel.users.observeForever(users)
         viewModel.error.observeForever(error)
     }
-
 
     @Test
     fun shouldFetchUsersWithSuccessful() {
