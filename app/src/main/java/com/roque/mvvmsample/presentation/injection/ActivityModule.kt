@@ -8,14 +8,8 @@ import dagger.Provides
 import org.jetbrains.annotations.NotNull
 
 @Module
-class ActivityModule {
+class ActivityModule(@field:NotNull @NonNull var activity: AppCompatActivity) {
 
-    @NotNull
-    lateinit var activity: AppCompatActivity
-
-    fun ActivityModule(@NonNull activity: AppCompatActivity) {
-        this.activity = activity
-    }
 
     @Provides
     internal fun provideContext(): Context {

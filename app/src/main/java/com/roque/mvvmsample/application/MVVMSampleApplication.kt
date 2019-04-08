@@ -9,14 +9,14 @@ class MVVMSampleApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        initComponent()?.inject(this)
+        getComponent()?.inject(this)
 
     }
 
     @NonNull
-    fun initComponent(): ApplicationComponent? {
-        component?.let {
-             component = DaggerApplicationComponent.builder().application(this).build()
+    fun getComponent(): ApplicationComponent? {
+        if (component == null) {
+            component = DaggerApplicationComponent.builder().application(this).build()
         }
         return component
     }

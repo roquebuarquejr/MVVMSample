@@ -1,19 +1,22 @@
 package com.roque.mvvmsample.presentation.activities
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.roque.mvvmsample.BaseInjectingActivity
 import com.roque.mvvmsample.BuildConfig
 import com.roque.mvvmsample.R
 import com.roque.mvvmsample.application.MVVMSampleApplication
+
 import com.roque.mvvmsample.presentation.viewmodel.GithubUsersViewModel
 import com.roque.mvvmsample.presentation.adapter.UserAdapter
+import com.roque.mvvmsample.presentation.injection.ActivityModule
 import kotlinx.android.synthetic.main.activity_githubusers.*
 
-class GithubUsersActivity : AppCompatActivity() {
+class GithubUsersActivity : BaseInjectingActivity<GithubUsersComponent>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,16 @@ class GithubUsersActivity : AppCompatActivity() {
 
         iniRecyclerView()
         initViewModel()
+    }
+
+    override fun onInject(component: GithubUsersComponent) {
+        component.inject(this)
+    }
+
+    override fun createComponent(): GithubUsersComponent {
+        val app = MVVMSampleApplication::class.java.cast(application)!!
+        val activityModule = ActivityModule(this)
+        return app.getComponent()!!.createActivityGithubUsers(activityModule)
     }
 
     private fun iniRecyclerView() {
