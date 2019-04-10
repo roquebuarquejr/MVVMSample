@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.roque.mvvmsample.BaseInjectingActivity
+import com.roque.mvvmsample.BaseActivityInjecting
 import com.roque.mvvmsample.R
 import com.roque.mvvmsample.application.MVVMSampleApplication
 
@@ -15,7 +15,7 @@ import com.roque.mvvmsample.presentation.injection.ActivityModule
 import kotlinx.android.synthetic.main.activity_githubusers.*
 import javax.inject.Inject
 
-class GithubUsersActivity : BaseInjectingActivity<GithubUsersComponent>() {
+class GithubUsersActivityInjecting : BaseActivityInjecting<GithubUsersComponent>() {
 
     @Inject
     lateinit var viewModel:GithubUsersViewModel
@@ -43,16 +43,6 @@ class GithubUsersActivity : BaseInjectingActivity<GithubUsersComponent>() {
     }
 
     private fun initViewModel() {
-        /**
-         * Create new ViewModel instance
-         */
-        /*val viewModel: GithubUsersViewModel by lazy {
-            ViewModelProviders.of(
-                this,
-                GithubUsersViewModel.GithubUsersViewModelFactory(BuildConfig.BASE_URL)
-            ).get(GithubUsersViewModel::class.java)
-        }*/
-
         /**
          * Starting observing userList liveData
          */

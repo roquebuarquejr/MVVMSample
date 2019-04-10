@@ -25,28 +25,23 @@ android {
     }
 }
 
-final okHttpVersion = '3.9.1'
-final retrofitVersion = '2.3.0'
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    //RETROFIT
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
-
-    //OKHTTP
-    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
-
     /**
      Commons Dependencies
      **/
     //RETROFIT
+    implementation commonDependencies.retrofit
+    implementation commonDependencies.retrofitAdapter
     implementation commonDependencies.rxJava
-    implementation commonDependencies.rxRetrofit
+
+    //NETWORKING
+    implementation commonDependencies.gson
+    implementation commonDependencies.okhttp
+    implementation commonDependencies.log
 
     //DAGGER
     implementation commonDependencies.dagger

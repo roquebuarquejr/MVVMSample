@@ -11,16 +11,26 @@ ext {
     final archComponentsVersion = '1.1.1'
     final retrofitVersion = '2.3.0'
     final mockitoVersion = '2.13.0'
+    final okHttpVersion = '3.9.1'
+
 
     commonDependencies = [
 
+            //RETROFIT
+            retrofit       : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            gson           : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+            //OKHTTP
+            okhttp         : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            log            : 'com.squareup.okhttp3:logging-interceptor:3.8.0',
+
             //RXJava
-            rxRetrofit   : "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
-            rxJava       : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            retrofitAdapter: "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion",
+            rxJava         : 'io.reactivex.rxjava2:rxandroid:2.1.1',
 
             //DAGGER
-            dagger       : 'com.google.dagger:dagger:2.17',
-            daggerCompile: 'com.google.dagger:dagger-compiler:2.17'
+            dagger         : 'com.google.dagger:dagger:2.17',
+            daggerCompile  : 'com.google.dagger:dagger-compiler:2.17'
     ]
 
     commonTestDependencies = [

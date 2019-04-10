@@ -17,9 +17,6 @@ import org.mockito.junit.MockitoJUnitRunner
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.android.plugins.RxAndroidPlugins
 
-
-
-
 @RunWith(MockitoJUnitRunner::class)
 class GithubUsersViewModelTest {
 

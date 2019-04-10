@@ -1,7 +1,6 @@
 package com.roque.mvvmsample.application
 
 import android.app.Application
-import androidx.annotation.NonNull
 
 class MVVMSampleApplication : Application() {
 
@@ -13,7 +12,6 @@ class MVVMSampleApplication : Application() {
 
     }
 
-    @NonNull
     fun getComponent(): ApplicationComponent? {
         if (component == null) {
             component = DaggerApplicationComponent.builder().application(this).build()

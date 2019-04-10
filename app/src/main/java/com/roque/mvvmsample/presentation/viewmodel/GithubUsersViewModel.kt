@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class GithubUsersViewModel @Inject constructor(private val service: Service) : ViewModel() {
 
-    @NonNull
+
     private val compositeDisposable = CompositeDisposable()
 
     val users = MutableLiveData<List<GithubUser>>()
