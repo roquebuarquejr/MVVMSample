@@ -15,7 +15,7 @@ import com.roque.mvvmsample.presentation.injection.ActivityModule
 import kotlinx.android.synthetic.main.activity_githubusers.*
 import javax.inject.Inject
 
-class GithubUsersActivityInjecting : BaseActivityInjecting<GithubUsersComponent>() {
+class GithubUsersActivity : BaseActivityInjecting<GithubUsersComponent>() {
 
     @Inject
     lateinit var viewModel:GithubUsersViewModel

@@ -38,6 +38,7 @@ ext {
             runner  : 'androidx.test:runner:1.1.2-alpha02',
             espresso: 'androidx.test.espresso:espresso-core:3.2.0-alpha02',
             mockito : "org.mockito:mockito-core:$mockitoVersion",
-            archCore: "android.arch.core:core-testing:$archComponentsVersion"
+            archCore: "android.arch.core:core-testing:$archComponentsVersion",
+            testRule: 'com.android.support.test:rules:1.0.2'
     ]
 }

@@ -9,5 +9,5 @@ import dagger.Subcomponent
 @Subcomponent(modules = [ActivityModule::class])
 interface GithubUsersComponent {
 
-    fun inject(githubUsersActivity: GithubUsersActivityInjecting)
+    fun inject(githubUsersActivity: GithubUsersActivity)
 }
