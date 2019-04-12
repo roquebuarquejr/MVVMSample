@@ -1,6 +1,5 @@
 package com.roque.mvvmsample.presentation.viewmodel
 
-import androidx.annotation.NonNull
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.roque.api.GithubUser
