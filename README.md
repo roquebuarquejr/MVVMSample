@@ -1,4 +1,4 @@
-# MVVM Android Architecture - WIP
+# MVVM Android Architecture
 
 This is a simple project with an approach for Model View ViewModel architecture in android. 
 It use the most current and popular libraries for android development and consume Github users API by doing HTPP requests.
@@ -20,4 +20,4 @@ It's also have a very nice approach about unit and instumented test applyed.
 * JUnit
 * Mockito
 * Arch core testing
-* Espresso
+* Espresso = WIP
